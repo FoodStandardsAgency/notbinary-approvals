@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/business-structure-type">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/telephone-number" method="post">
+
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is the operator's address?
+            </h1>
+            <span class="govuk-label govuk-hint">
+              This is the contact address for the operator. For example, the home address for a sole trader or headquarters address for a limited company.
+            </span>
+          </legend>
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="operator-address-line-1">
+              Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <input class="govuk-input" id="operator-address-line-1" name="operator-address-line-1" type="text" autocomplete="operator-address-line1">
+          </div>
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="operator-address-line-2">
+              <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+            </label>
+            <input class="govuk-input" id="operator-address-line-2" name="operator-address-line-2" type="text" autocomplete="operator-address-line2">
+          </div>
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="operator-address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="operator-address-town" name="operator-address-town" type="text" autocomplete="operator-address-level2">
+          </div>
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="operator-address-county">
+              County
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="operator-address-county" name="operator-address-county" type="text">
+          </div>
+        
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-width-one-third" for="operator-address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="operator-address-postcode" name="operator-address-postcode" type="text" autocomplete="postal-code">
+          </div>
+        
+        </fieldset>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

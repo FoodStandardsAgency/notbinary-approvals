@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/pest-control">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/advisory-visit" method="post">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="sops-cctv">
+              Welfare SOPs and CCTV camera locations (England only)
+            </label>
+          </h1>
+          <div class="govuk-form-group">
+            <span id="sops-cctv" class="govuk-hint">
+              For slaughterhouse applications, a copy of welfare SOP's and CCTV camera locations.
+            </span>
+            <label class="govuk-label" for="sops-cctv-upload">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="sops-cctv-upload" name="sops-cctv-upload" type="file">
+          </div>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

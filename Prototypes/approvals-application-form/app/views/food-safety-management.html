@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/location-map">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/cleaning-maintenance" method="post">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="food-safety-management-upload">
+              Food safety management system for each activity applied for
+            </label>
+          </h1>
+          <div class="govuk-form-group">
+            <span id="food-safety-management-hint" class="govuk-hint">
+              For example HACCP
+            </span>
+            <label class="govuk-label" for="food-safety-management-upload">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="food-safety-management-upload" name="food-safety-management-upload" type="file">
+          </div>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

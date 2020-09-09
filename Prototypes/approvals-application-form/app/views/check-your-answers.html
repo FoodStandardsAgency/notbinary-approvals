@@ -1,0 +1,526 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/juggling-trick">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Application type
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['type-of-approval']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a href="/application-type">
+             Change
+             <span class="govuk-visually-hidden"> application type</span>
+          </a>
+          </dd>
+       </div>
+       <!-- Change of FBO -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+        Date of change
+        </dt>
+        <dd class="govuk-summary-list__value">
+        {{data['fbo-change-of-date-day']}} {{data['fbo-change-of-date-month']}} {{data['fbo-change-of-date-year']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        <a href="/business-name">
+           Change
+           <span class="govuk-visually-hidden"> date of change</span>
+        </a>
+        </dd>
+     </div>
+
+     <!-- new FSA approval -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+      Local Authority approval number
+      </dt>
+      <dd class="govuk-summary-list__value">
+      {{data['la-approval-number']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+      <a href="/business-name">
+          Change
+          <span class="govuk-visually-hidden"> local authority approval number</span>
+      </a>
+      </dd>
+    </div>
+
+    <!-- new FSA approval -->
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Other type of business
+      </dt>
+      <dd class="govuk-summary-list__value">
+      {{data['business-type-other']}}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a href="/business-name">
+          Change
+          <span class="govuk-visually-hidden"> business type of other</span>
+        </a>
+      </dd>
+  </div>
+    
+        
+    
+<!-- business name -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Approval name
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['approval-name']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/business-name">
+     Change
+     <span class="govuk-visually-hidden"> approval name</span>
+  </a>
+  </dd>
+</div>
+<!-- trading name -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Trading name
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['trading-name']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/business-name">
+     Change
+     <span class="govuk-visually-hidden"> trading name</span>
+  </a>
+  </dd>
+</div>
+
+<!-- Business structure type -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Type of business
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['business-structure-type']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/business-structure-type">
+     Change
+     <span class="govuk-visually-hidden"> business structure type</span>
+  </a>
+  </dd>
+</div>
+
+<!-- business-company-information -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Company information
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['reg-company-name']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/business-company-information">
+     Change
+     <span class="govuk-visually-hidden"> company information</span>
+  </a>
+  </dd>
+</div>
+<!-- business-company-information -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Company registration number
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['company-registration-number']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/business-company-information">
+     Change
+     <span class="govuk-visually-hidden"> company registration number</span>
+  </a>
+  </dd>
+</div>
+      
+<!-- Company structure name and address -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Operator name
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['dataLink']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/business-structure-operator-name">
+     Change
+     <span class="govuk-visually-hidden"> operator name</span>
+  </a>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Operator address
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['operator-address-line-1']}}<br>
+  {{data['operator-address-line-2']}}<br>
+  {{data['operator-address-town']}}<br>
+  {{data['operator-address-county']}}<br>
+  {{data['operator-address-postcode']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/business-structure-operator-address">
+     Change
+     <span class="govuk-visually-hidden"> operator address</span>
+  </a>
+  </dd>
+</div>
+
+<!-- Operating start date -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Operating start date
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['operating-start-date-day']}}-{{data['operating-start-date-month']}}-{{data['operating-start-date-year']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/operating-start-date">
+     Change
+     <span class="govuk-visually-hidden"> operating start date</span>
+  </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    phone number
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{data['business-telephone']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/business-telephone">
+      Change
+      <span class="govuk-visually-hidden"> telephone number</span>
+    </a>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Email
+  </dt>
+  <dd class="govuk-summary-list__value">
+    {{data['business-email']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a href="/email">
+      Change
+      <span class="govuk-visually-hidden"> email</span>
+    </a>
+  </dd>
+</div>
+
+<!-- Type of establishment -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Type of establishment
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['establishment-conditional']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/type-of-establishment">
+     Change
+     <span class="govuk-visually-hidden"> type of establishment</span>
+  </a>
+  </dd>
+</div>
+
+<!-- activities throughput (2) -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+  Activities and throughput
+  <span class="govuk-hint">(for prototype purposes we're only including slaughterhouse domestic option)</span>
+  </dt>
+  <dd class="govuk-summary-list__value">
+  {{data['slaughterhouse-domestic-option']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  <a href="/activities-throughput-2">
+     Change
+     <span class="govuk-visually-hidden"> activities and throughput</span>
+  </a>
+  </dd>
+</div>
+
+
+        
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Approval name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['approval-name']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/business-name">
+              Change
+              <span class="govuk-visually-hidden"> approval name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Trading name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['trading-name']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/business-name">
+              Change
+              <span class="govuk-visually-hidden"> trading name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Establishment address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['address-line-1']}}<br>
+            {{data['address-line-2']}}<br>
+            {{data['address-town']}}<br>
+            {{data['address-county']}}<br>
+            {{data['address-postcode']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/establishment-address">
+              Change
+              <span class="govuk-visually-hidden"> establishment address</span>
+            </a>
+          </dd>
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Handling animal origin
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['handling-animal-origin']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/handling-animal-origin">
+              Change
+              <span class="govuk-visually-hidden"> handling animal origin</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Business structure type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['business-structure-type']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/business-structure-type">
+              Change
+              <span class="govuk-visually-hidden"> business structure type</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['company-name']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/company-name">
+              Change
+              <span class="govuk-visually-hidden"> company name</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Establishment activities
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['establishment-conditional']}}
+            {{data['slaughterhouse-domestic-option']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/establishment-activities-throughput">
+              Change
+              <span class="govuk-visually-hidden"> establishment activities</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Layout plan
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['layout-plan-upload']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/layout-plan">
+              Change
+              <span class="govuk-visually-hidden"> layout plan</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location map
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['location-map-upload']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/location-map">
+              Change
+              <span class="govuk-visually-hidden"> location map</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Food safety management
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['food-safety-management-upload']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/food-safety-management">
+              Change
+              <span class="govuk-visually-hidden"> food safety management</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Proposed arrangements for cleaning and maintenance programs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['cleaning-maintenance-upload']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/cleaning-maintenance">
+              Change
+              <span class="govuk-visually-hidden"> proposed arrangements for cleaning and maintenance programs</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Waste collection and disposal arrangements
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['abp-collector-upload']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/abp-collector">
+              Change
+              <span class="govuk-visually-hidden"> Waste collection and disposal arrangements</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Water supply quality testing arrangements
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['water-supply-quality-upload']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/water-supply-quality">
+              Change
+              <span class="govuk-visually-hidden"> water supply quality testing arrangements</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Pest control arrangements
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['pest-control-upload']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/pest-control">
+              Change
+              <span class="govuk-visually-hidden"> pest control arrangements</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Welfare SOPs and CCTV camera locations
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['sops-cctv-upload']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="/sops-cctv">
+              Change
+              <span class="govuk-visually-hidden"> sops-cctv</span>
+            </a>
+          </dd>
+        </div>
+        <!-- advisory visit -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Advisory visit
+          </dt>
+          <dd class="govuk-summary-list__value">
+          {{data['advisory-visit']}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          <a href="/advisory-visit">
+            Change
+            <span class="govuk-visually-hidden"> advisory visit selection</span>
+          </a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

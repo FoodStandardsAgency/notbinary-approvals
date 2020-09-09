@@ -1,0 +1,12 @@
+Slaughterhouse
+Cattle (bovine)
+12 
+Bison
+12
+Water buffalo
+12
+Meat preparations establishments
+Production of meat preparations
+15
+Production of meat preparations to be eaten less than throughly cooked
+5

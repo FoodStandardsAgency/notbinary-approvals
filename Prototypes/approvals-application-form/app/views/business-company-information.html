@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/business-structure-type">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/business-structure-operator-address" method="post">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="reg-company-name">
+              What is the company name?
+            </label>
+            <span id="reg-company-name" class="govuk-hint">
+              The name of the registered company that is acting as the operator of this food business.
+            </span>
+        
+          </h1>
+          <input class="govuk-input" id="reg-company-name" name="reg-company-name" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="company-registration-number">
+            What is the company registration number?
+          </label>
+          <span id="company-registration-number-hint" class="govuk-hint">
+            The registration number provided by Companies House. 
+          </span>
+          </h1>
+          <input class="govuk-input" id="company-registration-number" name="company-registration-number" type="text">
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

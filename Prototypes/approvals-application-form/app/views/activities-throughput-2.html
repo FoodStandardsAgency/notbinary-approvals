@@ -1,0 +1,1131 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Question page
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="/type-of-establishment">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form class="form" action="/handling-animal-origin" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend">
+                    <h1>Activities</h1>
+                </legend>
+                <div class="govuk-form-group {%if est_slaughterhouse == false %} govuk-!-display-none {%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Slaughterhouse
+                        </legend>
+                        <div class="govuk-checkboxes">
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        Slaughter of domestic ungulates
+                                    </legend>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional"
+                                                name="slaughterhouse-domestic-option" type="checkbox"
+                                                value="Cattle (bovine)"
+                                                data-aria-controls="conditional-slaughter-domestic-1-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-domestic-conditional-1">
+                                                Cattle (bovine)
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-domestic-1-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-domestic-1-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-domestic-1-throughput"
+                                                    name="slaughter-domestic-1-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-2"
+                                                name="slaughterhouse-domestic-option" type="checkbox"
+                                                value="Calves (bovine)"
+                                                data-aria-controls="conditional-slaughter-domestic-2-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-domestic-conditional-2">
+                                                Calves (bovine)
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-domestic-2-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-domestic-2-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-domestic-2-throughput"
+                                                    name="slaughter-domestic-2-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-3"
+                                                name="slaughterhouse-domestic-option" type="checkbox" value="Bison"
+                                                data-aria-controls="conditional-slaughter-domestic-3-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-domestic-conditional-3">
+                                                Bison
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-domestic-3-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-domestic-3-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-domestic-3-throughput"
+                                                    name="slaughter-domestic-3-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-4"
+                                                name="slaughterhouse-domestic-option" type="checkbox"
+                                                value="Water buffalo"
+                                                data-aria-controls="conditional-slaughter-domestic-4-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-domestic-conditional-4">
+                                                Water buffalo
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-domestic-4-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-domestic-4-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-domestic-4-throughput"
+                                                    name="slaughter-domestic-4-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-5"
+                                                name="slaughterhouse-domestic-option" type="checkbox"
+                                                value="Sheep (ovine)"
+                                                data-aria-controls="conditional-slaughter-domestic-5-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-domestic-conditional-5">
+                                                Sheep (ovine)
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-domestic-5-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-domestic-5-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-domestic-5-throughput"
+                                                    name="slaughter-domestic-5-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-6"
+                                                name="slaughterhouse-domestic-option" type="checkbox"
+                                                value="Goats (caprine)"
+                                                data-aria-controls="conditional-slaughter-domestic-6-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-domestic-conditional-6">
+                                                Goats (caprine)
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-domestic-6-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-domestic-6-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-domestic-6-throughput"
+                                                    name="slaughter-domestic-6-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-7"
+                                                name="slaughterhouse-domestic-option" type="checkbox"
+                                                value="Pig (porcine)"
+                                                data-aria-controls="conditional-slaughter-domestic-7-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-domestic-conditional-7">
+                                                Pigs (porcine)
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-domestic-7-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-domestic-7-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-domestic-7-throughput"
+                                                    name="slaughter-domestic-7-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        Slaughter and/or dressing
+                                    </legend>
+                                    <div class="govuk-checkboxes">
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-1"
+                                                name="slaughter-and-dressing" type="checkbox"
+                                                value="farmed land mammals"
+                                                data-aria-controls="conditional-slaughter-and-dressing-1-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-and-dressing">
+                                                Farmed land mammals
+                                            </label>
+                                            <span class="govuk-hint govuk-checkboxes__hint">
+                                                other than domestic ungulates
+                                            </span>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-and-dressing-1-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-and-dressing-1-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-and-dressing-1-throughput"
+                                                    name="slaughter-and-dressing-1-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-2"
+                                                name="slaughter-and-dressing" type="checkbox" value="farmed deer"
+                                                data-aria-controls="conditional-slaughter-and-dressing-2-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-and-dressing-2">
+                                                Farmed deer
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-and-dressing-2-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-and-dressing-2-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-and-dressing-2-throughput"
+                                                    name="slaughter-and-dressing-2-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-3"
+                                                name="slaughter-and-dressing" type="checkbox" value="farmed wild boar"
+                                                data-aria-controls="conditional-slaughter-and-dressing-3-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-and-dressing-3">
+                                                Farmed wild boar
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-and-dressing-3-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-and-dressing-3-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-and-dressing-3-throughput"
+                                                    name="slaughter-and-dressing-3-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-3"
+                                                name="slaughter-and-dressing" type="checkbox"
+                                                value="Domestic soliped/equidae"
+                                                data-aria-controls="conditional-slaughter-and-dressing-4-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-and-dressing-3">
+                                                Domestic soliped/equidae
+                                            </label>
+                                            <span class="govuk-hint govuk-checkboxes__hint">horses</span>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-and-dressing-4-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-and-dressing-4-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-and-dressing-4-throughput"
+                                                    name="slaughter-and-dressing-4-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-3"
+                                                name="slaughter-and-dressing" type="checkbox" value="ratites"
+                                                data-aria-controls="conditional-slaughter-and-dressing-5-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-and-dressing-3">
+                                                Ratites
+                                            </label>
+                                            <span class="govuk-hint govuk-checkboxes__hint">For example Ostrich, rhea
+                                                and emu</span>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-and-dressing-5-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-and-dressing-5-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-and-dressing-5-throughput"
+                                                    name="slaughter-and-dressing-5-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        Slaughter of farmed birds and lagomorphs
+                                    </legend>
+                                    <div class="govuk-checkboxes">
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-1"
+                                                name="slaughter-farmed-birds" type="checkbox" value="domestic fowl"
+                                                data-aria-controls="conditional-slaughter-farmed-birds-1-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-farmed-birds-1">
+                                                Domestic fowl
+                                            </label>
+                                            <span class="govuk-hint govuk-checkboxes__hint">
+                                                For example chickens, hens and broilers
+                                            </span>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-farmed-birds-1-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-farmed-birds-1-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-farmed-birds-1-throughput"
+                                                    name="slaughter-farmed-birds-1-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-2"
+                                                name="slaughter-farmed-birds" type="checkbox" value="turkey"
+                                                data-aria-controls="conditional-slaughter-farmed-birds-2-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-farmed-birds-2">
+                                                Turkey
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional-2-hidden"
+                                            id="conditional-slaughter-farmed-birds-2-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-farmed-birds-2-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-farmed-birds-2-throughput"
+                                                    name="slaughter-farmed-birds-2-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-3"
+                                                name="slaughter-farmed-birds" type="checkbox" value="duck"
+                                                data-aria-controls="conditional-slaughter-farmed-birds-3-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-farmed-birds-3">
+                                                Duck
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-farmed-birds-3-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-farmed-birds-3-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-farmed-birds-3-throughput"
+                                                    name="slaughter-farmed-birds-3-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-4"
+                                                name="slaughter-farmed-birds" type="checkbox" value="geese"
+                                                data-aria-controls="conditional-slaughter-farmed-birds-4-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-farmed-birds-4">
+                                                Geese
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-farmed-birds-4-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-farmed-birds-4-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-farmed-birds-4-throughput"
+                                                    name="slaughter-farmed-birds-4-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-5"
+                                                name="slaughter-farmed-birds" type="checkbox" value="guinea fowl"
+                                                data-aria-controls="conditional-slaughter-farmed-birds-5-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-farmed-birds-5">
+                                                Guinea fowl
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-farmed-birds-5-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-farmed-birds-5-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-farmed-birds-5-throughput"
+                                                    name="slaughter-farmed-birds-5-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-6"
+                                                name="slaughter-farmed-birds" type="checkbox" value="quail"
+                                                data-aria-controls="conditional-slaughter-farmed-birds-6-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-farmed-birds-6">
+                                                Quail
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-farmed-birds-6-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-farmed-birds-6-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-farmed-birds-6-throughput"
+                                                    name="slaughter-farmed-birds-6-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-7"
+                                                name="slaughter-farmed-birds" type="checkbox" value="ratites"
+                                                data-aria-controls="conditional-slaughter-farmed-birds-7-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-farmed-birds-7">
+                                                Ratites
+                                            </label>
+                                            <span class="govuk-hint govuk-checkboxes__hint">
+                                                For example ostrich, rhea and emu
+                                            </span>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-farmed-birds-7-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-farmed-birds-7-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-farmed-birds-7-throughput"
+                                                    name="slaughter-farmed-birds-7-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-8"
+                                                name="slaughter-farmed-birds" type="checkbox" value="lagomorphs"
+                                                data-aria-controls="conditional-slaughter-farmed-birds-8-throughput-conditional">
+                                            <label class="govuk-label govuk-checkboxes__label"
+                                                for="slaughter-farmed-birds-8">
+                                                Lagomorphs
+                                            </label>
+                                            <span class="govuk-hint govuk-checkboxes__hint">
+                                                For example rabbits, hares and rodents
+                                            </span>
+                                        </div>
+                                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                            id="conditional-slaughter-farmed-birds-8-throughput-conditional">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="slaughter-farmed-birds-8-throughput">
+                                                    Estimated average weekly throughput
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third"
+                                                    id="slaughter-farmed-birds-8-throughput"
+                                                    name="slaughter-farmed-birds-8-throughput" type="number">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_gamehandling == false %} govuk-!-display-none {%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Game handling establishment
+                        </legend>
+                        <span class="govuk-hint">
+                            Dressing of
+                        </span>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="game-handling-1" name="game-handling-1"
+                                    type="checkbox" value="carcasses"
+                                    data-aria-controls="conditional-game-handling-1-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="game-handling-1">
+                                    Large wild game
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    For example wild deer and feral wild boar
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-game-handling-1-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="game-handling-1-throughput">
+                                        Estimated weekly throughput in <strong>kilograms</strong>
+                                    </label>
+                                    <span class="govuk-hint govuk-checkboxes__hint">
+                                        For example wild deer and feral wild boar
+                                    </span>
+                                </div>
+                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-game-handling-1-throughput-conditional">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="game-handling-1-throughput">
+                                            Estimated weekly throughput in <strong>tonnes</strong>
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="game-handling-1-throughput" name="game-handling-1-throughput" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="game-handling-2" name="game-handling-2"
+                                    type="checkbox" value="small wild game in-feathers"
+                                    data-aria-controls="conditional-game-handling-2-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="game-handling-2">
+                                    Small wild game in-feather
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    For example pheasants, pigeons and grouse
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-game-handling-2-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="game-handling-2-throughput">
+                                        Estimated weekly throughput in <strong>kilograms</strong>
+                                    </label>
+                                    <span class="govuk-hint govuk-checkboxes__hint">
+                                        For example pheasants, pigeons and grouse
+                                    </span>
+                                </div>
+                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-game-handling-2-throughput-conditional">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="game-handling-2-throughput">
+                                            Estimated weekly throughput in <strong>tonnes</strong>
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="game-handling-2-throughput" name="game-handling-2-throughput" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="game-handling-3" name="game-handling-3"
+                                    type="checkbox" value="small wild game in-fur"
+                                    data-aria-controls="conditional-game-handling-3-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="game-handling-3"
+                                    data-aria-controls="conditional-game-handling-3-throughput-conditional">
+                                    Small wild game in-fur
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    For example rabbits, hares and rodents
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-game-handling-3-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="game-handling-3-throughput">
+                                        Estimated weekly throughput in <strong>kilograms</strong>
+                                    </label>
+                                    <span class="govuk-hint govuk-checkboxes__hint">
+                                        For example rabbits, hares and rodents
+                                    </span>
+                                </div>
+                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-game-handling-3-throughput-conditional">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="game-handling-3-throughput">
+                                            Estimated weekly throughput in <strong>tonnes</strong>
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="game-handling-3-throughput" name="game-handling-3-throughput" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_cuttingplant == false %}govuk-!-display-none{%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Cutting plant
+                        </legend>
+                        <span class="govuk-hint">
+                            Cutting of meat from
+                        </span>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cutting-plant-1" name="cutting-plant-1"
+                                    type="checkbox" value="carcasses"
+                                    data-aria-controls="conditional-domestic-ungulates-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-1">
+                                    Domestic ungulates
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    Read meat
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-domestic-ungulates-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="domestic-ungulates-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="domestic-ungulates-throughput"
+                                        name="domestic-ungulates-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cutting-plant-2" name="cutting-plant-2"
+                                    type="checkbox" value="farmed birds and lagomorphs"
+                                    data-aria-controls="conditional-farmed-birds-lagomorphs-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-2">
+                                    Farmed birds and lagomorphs
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    White meat
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-farmed-birds-lagomorphs-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="farmed-birds-lagomorphs-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third"
+                                        id="farmed-birds-lagomorphs-throughput" name="farmed-birds-lagomorphs-throughput"
+                                        type="number">
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cutting-plant-3" name="cutting-plant-3"
+                                    type="checkbox" value="large wild game"
+                                    data-aria-controls="conditional-large-wild-game-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-3">
+                                    Large wild game
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-large-wild-game-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="large-wild-game-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="large-wild-game-throughput"
+                                        name="large-wild-game-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cutting-plant-4" name="cutting-plant-4"
+                                    type="checkbox" value="small wild game"
+                                    data-aria-controls="conditional-small-wild-game-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-4">
+                                    Small wild game
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-small-wild-game-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="small-wild-game-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="small-wild-game-throughput"
+                                        name="small-wild-game-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cutting-plant-5" name="cutting-plant-5"
+                                    type="checkbox" value="Farmed game"
+                                    data-aria-controls="conditional-farmed-game-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-5">
+                                    Farmed game
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-farmed-game-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="farmed-game-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="farmed-game-throughput"
+                                        name="farmed-game-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_wholesale == false %} govuk-!-display-none {%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Wholesale market
+                        </legend>
+                        <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="wholesale-market-1" name="wholesale-market-1"
+                                        type="checkbox"
+                                        value="Shared common installations and sections where foodstuffs are sold">
+                                    <label class="govuk-label govuk-checkboxes__label" for="wholesale-market-1">
+                                        Shared common installations and sections where foodstuffs are sold
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="wholesale-market-2" name="wholesale-market-2"
+                                        type="checkbox"
+                                        value="A separate market unit which shares common installations and sections where foodstuffs are sold">
+                                    <label class="govuk-label govuk-checkboxes__label" for="wholesale-market-2">
+                                        A separate market unit which shares common installations and sections where
+                                        foodstuffs are sold
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_mincedmeat == false %}govuk-!-display-none{%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Minced meat
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="minced-meat-establishment1"
+                                    name="minced-meat-establishment1" type="checkbox" value="Production of minced meat"
+                                    data-aria-controls="conditional-minced-meat-establishment-1-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="minced-meat-establishment1">
+                                    Production of minced meat
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-minced-meat-establishment-1-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="minced-meat-establishment-1-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third"
+                                        id="minced-meat-establishment-1-throughput"
+                                        name="minced-meat-establishment-1-throughput" type="number">
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="minced-meat-establishment2"
+                                    name="minced-meat-establishment2" type="checkbox"
+                                    value="Production of minced meat to be eaten less than throughly cooked"
+                                    data-aria-controls="conditional-minced-meat-establishment-2-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="minced-meat-establishment2">
+                                    Production of minced meat to be eaten less than throughly cooked
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    For example rare burgers
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-minced-meat-establishment-2-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="minced-meat-establishment-2-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third"
+                                        id="minced-meat-establishment-2-throughput"
+                                        name="minced-meat-establishment-2-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_meatprep == false %}govuk-!-display-none{%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Meat preparations establishments
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="minced-meat-establishment-1"
+                                    name="minced-meat-establishment-1" type="checkbox"
+                                    value="Production of meat preparations"
+                                    data-aria-controls="conditional-minced-meat-1-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="minced-meat-establishment-1">
+                                    Production of meat preparations
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-minced-meat-1-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="minced-meat-1-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="minced-meat-1-throughput"
+                                        name="minced-meat-1-throughput" type="number">
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="minced-meat-establishment-2"
+                                    name="minced-meat-establishment-2" type="checkbox"
+                                    value="Production of meat preparations to be eaten less than throughly cooked"
+                                    data-aria-controls="conditional-minced-meat-2-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="minced-meat-establishment-2">
+                                    Production of meat preparations to be eaten less than throughly cooked
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    For example rare burgers
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-minced-meat-2-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="meat-preparations-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="meat-preparations-throughput"
+                                        name="meat-preparations-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_mechanicallyseparated == false %}govuk-!-display-none{%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Mechanically separated meat establishment
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="mechanically-separated-meat-1"
+                                    name="mmechanically-separated-meat-1" type="checkbox"
+                                    value="Production of mechanically separated meat"
+                                    data-aria-controls="conditional-mechanically-separated-meat-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="mechanically-separated-meat-1">
+                                    Production of mechanically separated meat
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-mechanically-separated-meat-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="mechanically-separated-meat-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third"
+                                        id="mechanically-separated-meat-throughput"
+                                        name="mechanically-separated-meat-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_processingplant == false %}govuk-!-display-none{%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Processing plant
+                            <span class="govuk-hint">
+                                Processing/producing of
+                            </span>
+                        </legend>
+                        <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="processing-plant-1" name="processing-plant-1"
+                                        type="checkbox" value="Meat products"
+                                        data-aria-controls="conditional-meat-products-throughput-conditional">
+                                    <label class="govuk-label govuk-checkboxes__label" for="processing-plant-1">
+                                        Meat products
+                                    </label>
+                                    <span class="govuk-hint govuk-checkboxes__hint">
+                                        to be cooked before eating
+                                    </span>
+                                </div>
+                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                    id="conditional-meat-products-throughput-conditional">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="meat-products-throughput">
+                                            Estimated weekly throughput in <strong>tonnes</strong>
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="meat-products-throughput"
+                                            name="meat-products-throughput" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="processing-plant-2" name="processing-plant-2"
+                                        type="checkbox" value="Ready to eat meat products"
+                                        data-aria-controls="conditional-ready-to-eat-throughput-conditional">
+                                    <label class="govuk-label govuk-checkboxes__label" for="processing-plant-2">
+                                        Ready to eat meat products
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                    id="conditional-ready-to-eat-throughput-conditional">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="ready-to-eat-throughput">
+                                            Estimated weekly throughput in <strong>tonnes</strong>
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="ready-to-eat-throughput"
+                                            name="ready-to-eat-throughput" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="processing-plant-3" name="processing-plant-3"
+                                        type="checkbox" value="Rendered animal fats and greaves"
+                                        data-aria-controls="conditional-rendered-animal-throughput-conditional">
+                                    <label class="govuk-label govuk-checkboxes__label" for="processing-plant-3">
+                                        Rendered animal fats and greaves
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                    id="conditional-rendered-animal-throughput-conditional">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="rendered-animal-throughput">
+                                            Estimated weekly throughput in <strong>tonnes</strong>
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="rendered-animal-throughput"
+                                            name="rendered-animal-throughput" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="processing-plant-4" name="processing-plant-4"
+                                        type="checkbox" value="Treated stomach, bladders and intestines"
+                                        data-aria-controls="conditional-treated-stomach-throughput-conditional">
+                                    <label class="govuk-label govuk-checkboxes__label" for="processing-plant-4">
+                                        Treated stomach, bladders and intestines
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                    id="conditional-treated-stomach-throughput-conditional">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="treated-stomach-throughput">
+                                            Estimated weekly throughput in <strong>tonnes</strong>
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="treated-stomach-throughput"
+                                            name="treated-stomach-throughput" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="processing-plant-5" name="processing-plant-5"
+                                        type="checkbox" value="Production of mechanically separated meat"
+                                        data-aria-controls="conditional-gelatine-throughput-conditional">
+                                    <label class="govuk-label govuk-checkboxes__label" for="processing-plant-5">
+                                        Gelatine
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                    id="conditional-gelatine-throughput-conditional">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="gelatine-throughput">
+                                            Estimated weekly throughput in <strong>tonnes</strong>
+                                        </label>
+                                        <input class="govuk-input govuk-!-width-one-third" id="gelatine-throughput"
+                                            name="gelatine-throughput" type="number">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="processing-plant-6" name="processing-plant-6"
+                                    type="checkbox" value="Collagen"
+                                    data-aria-controls="conditional-collagen-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="processing-plant-6">
+                                    Collagen
+                                </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-collagen-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="collagen-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="collagen-throughput"
+                                        name="collagen-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_coldstore == false %}govuk-!-display-none{%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Cold store
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cold-store-1" name="cold-store-1" type="checkbox"
+                                    value="Storage of product of animal origin"
+                                    data-aria-controls="conditional-cold-store-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="cold-store-1">
+                                    Storage of product of animal origin
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    fresh or processed
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-cold-store-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="cold-store-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="cold-store-throughput"
+                                        name="cold-store-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_repacking == false %}govuk-!-display-none{%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Re-packaging establishments
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                                <input class="govuk-checkboxes__input" id="repackaging-establishments-1"
+                                    name="establishment-conditional" type="checkbox"
+                                    value="Repackaging of products of animal origin"
+                                    data-aria-controls="conditional-repackaging-establishments-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="repackaging-establishments">
+                                    Repackaging of products of animal origin
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    fresh or processed
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-repackaging-establishments-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="repackaging-establishments-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third"
+                                        id="repackaging-establishments-throughput"
+                                        name="repackaging-establishments-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group {%if est_rewrapping == false %}govuk-!-display-none{%endif%}">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Re-wrapping establishments
+                        </legend>
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="rewrapping-establishments-1"
+                                    name="rewrapping-establishments-1" type="checkbox"
+                                    value="Rewrapping of products opf animal origin"
+                                    data-aria-controls="conditional-rewrapping-establishments-throughput-conditional">
+                                <label class="govuk-label govuk-checkboxes__label" for="rewrapping-establishments-1">
+                                    Re-wrapping of products of animal origin
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    fresh or processed
+                                </span>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                                id="conditional-rewrapping-establishments-throughput-conditional">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="rewrapping-establishments-throughput">
+                                        Estimated weekly throughput in <strong>tonnes</strong>
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third"
+                                        id="rewrapping-establishments-throughput"
+                                        name="rewrapping-establishments-throughput" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </fieldset>
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

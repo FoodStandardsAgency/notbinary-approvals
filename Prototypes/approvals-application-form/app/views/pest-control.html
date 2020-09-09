@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/water-supply-quality">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/sops-cctv" method="post">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="pest-control">
+              Pest control arrangements
+            </label>
+          </h1>
+          <div class="govuk-form-group">
+            <span id="pest-control-hint" class="govuk-hint">
+              A description of the pest control arangements or details of contractor's name and address with plan of pest control measures.
+            </span>
+            <label class="govuk-label" for="pest-control-upload">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="pest-control-upload" name="pest-control-upload" type="file">
+          </div>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+Trading name
+Type of business
+Operator's First and middle names
+Operator's Last name
+Operator's address
+Operator's telephone
+Operator's email address

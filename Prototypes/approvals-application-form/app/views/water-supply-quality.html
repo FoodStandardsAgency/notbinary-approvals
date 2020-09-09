@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/abp-collector">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/pest-control" method="post">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="water-supply-quality">
+              Water supply quality testing arrangements
+            </label>
+          </h1>
+          <span id="water-supply-quality-hint" class="govuk-hint">
+            A description of the water supply quality testing arrangements (Microbiological analysis) and water test result from local water authority.
+          </span>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="water-supply-quality-upload">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="water-supply-quality-upload" name="water-supply-quality-upload" type="file">
+          </div>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/sops-cctv">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/check-your-answers" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Would you like to arrange an advisory visit?
+              </h1>
+              <span class="govuk-hint">
+                Advisory visits aim to help food business operators identify the welfare and hygiene requirements which may apply to their proposed approval activities. Areas of advice include building structure, equipment and facilities, operational hygiene considerations and HACCP, good practices, record management and standard operating procedures as well as animal welfare. An advisory visit costs £362.88.
+              </span>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="advisory-visit-yes" name="advisory-visit" type="radio" value="yes" aria-describedby="new-approval-hint">
+                <label class="govuk-label govuk-radios__label" for="advisory-visit-yes">
+                  Yes
+                </label>
+                <span id="new-approval-hint" class="govuk-hint">
+                  A Field Veterinary Leader will contact you to arrange this visit.
+                </span>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="advisory-visit-no" name="advisory-visit" type="radio" value="no" aria-describedby="change-approval-hint">
+                <label class="govuk-label govuk-radios__label" for="advisory-visit-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

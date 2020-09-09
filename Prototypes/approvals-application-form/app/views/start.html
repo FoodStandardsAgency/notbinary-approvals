@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>apply for an approval</li>
+      </ul>
+
+      <p>Registering takes around 25 minutes.</p>
+
+      <a href="/application-type" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <h2 id="before-you-start" class="govuk-heading-m">Before you start</h2>
+
+      <p>You can also <a href="#">apply by post</a>.</p>
+
+      <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
+
+      <p>You should have finished any building work on the establishment before applying for approval.</p>
+      
+      <p>You must provide the following information in order to complete this application:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>A layout plan of the establishment</li>
+        <li>The food safety management system for each activity applying for (e.g. HACCP)</li>
+        <li>Cleaning and maintenance arrangements</li>
+        <li>Waste collection and disposal arrangements</li>
+        <li>Water supply quality testing arrangements</li>
+        <li>Water test result from the local water authority</li>
+        <li>If you are a registered business, your company registration number</li>
+      </ul>
+      <h2 id="help-and-guidance" class="govuk-heading-m">Help and guidance</h2>
+      <p>For help with completing the application form please contact the Approvals team via <a href="mailto:email">email</a> or telephone <span>01904 321321.</span></p>
+      <h3 class="govuk-heading-s">Layout plan</h3>
+      <p>These can be hand drawn but for more complicated establishments such as slaughterhouses it is advisable to contact a consultant to draw up the plans. This plan also requires a red boundary encompassing all the areas to be approved.</p>
+      <h3 class="govuk-heading-s">Guidance item</h3>
+      <p>Please consult the <a href="">Meat Industry Guide</a> for more information on each part of the application form.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#before-you-start">
+                Before you start
+              </a>
+            </li>
+            <li>
+              <a href="#help-and-guidance">
+                Help and guidance
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

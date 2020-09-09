@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/business-structure-type">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/business-structure-operator-address" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="operator-first-names">
+              What is the operator's name?
+            </label>
+            <span id="changed-name-hint" class="govuk-hint">
+              The operator is the person or people who make the decisions about how the food business operates.
+            </span>
+          </h1>
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="operator-first-names">
+              First and middle names
+            </label>
+            <span id="changed-name-hint" class="govuk-hint">
+              Please write the operator's full legal name.
+            </span>
+          </h2>
+          <input class="govuk-input" id="operator-first-names" name="operator-first-names" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="last-name">
+            Last name
+            </label>
+          </h2>
+          <input class="govuk-input" id="last-name" name="last-name" type="text">
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

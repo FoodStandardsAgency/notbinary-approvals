@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/business-name">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/branching/business-type-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What is the type of business?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="business-structure-type-1" name="business-structure-type" type="radio" value="incorporation" aria-describedby="business-structure-type-hint">
+                <label class="govuk-label govuk-radios__label" for="business-structure-type-1">
+                  Incorporation
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="business-structure-type-2" name="business-structure-type" type="radio" value="partnership">
+                <label class="govuk-label govuk-radios__label" for="business-structure-type-2">
+                  Partnership
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="business-structure-type-3" name="business-structure-type" type="radio" value="sole-trader"  aria-describedby="business-structure-type-hint">
+                <label class="govuk-label govuk-radios__label" for="business-structure-type-3">
+                  Sole trader
+                </label>
+              </div>
+
+              <!-- <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="business-structure-type-4" name="business-structure-type" type="radio" value="other"  aria-describedby="business-structure-type-hint">
+                <label class="govuk-label govuk-radios__label" for="business-structure-type-4">
+                  Other business type
+                </label>
+              </div> -->
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

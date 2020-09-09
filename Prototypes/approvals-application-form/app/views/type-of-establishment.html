@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/operating-start-date">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/activities-throughput-2" method="post">
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="establishment-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Type of establishment for approval
+                </h1>
+              </legend>
+              <span id="establishment-conditional-hint" class="govuk-hint">
+                Select all options that are relevant to you. If you are applying for additional activities you only need to select the new activities.
+              </span>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional" name="establishment-conditional" type="checkbox" value="Slaughterhouse" data-aria-controls="conditional-establishment-conditional">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional">
+                    Slaughterhouse
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-2" name="establishment-conditional" type="checkbox" value="Game handling establishment" data-aria-controls="conditional-establishment-conditional-2">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-2">
+                    Game handling establishment
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-3" name="establishment-conditional" type="checkbox" value="Cutting plant" data-aria-controls="conditional-establishment-conditional-3">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-3">
+                    Cutting plant
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-4" name="establishment-conditional" type="checkbox" value="Wholesale market" data-aria-controls="conditional-establishment-conditional-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-4">
+                      Wholesale market
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-5" name="establishment-conditional" type="checkbox" value="Minced meat" data-aria-controls="conditional-establishment-conditional-5">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-5">
+                      Minced meat
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-6" name="establishment-conditional" type="checkbox" value="Meat preparations establishments" data-aria-controls="conditional-establishment-conditional-6">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-6">
+                      Meat preparations establishments
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-7" name="establishment-conditional" type="checkbox" value="Mechanically separated meat establishment" data-aria-controls="conditional-establishment-conditional-7">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-7">
+                      Mechanically separated meat establishment
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-8" name="establishment-conditional" type="checkbox" value="Processing plant" data-aria-controls="conditional-establishment-conditional-8">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-8">
+                      Processing plant
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-9" name="establishment-conditional" type="checkbox" value="Cold store" data-aria-controls="conditional-establishment-conditional-9">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-9">
+                      Cold store
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-10" name="repackaging-establishments" type="checkbox" value="Re-packaging establishments" data-aria-controls="conditional-establishment-conditional-10">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-10">
+                      Re-packaging establishment
+                  </label>
+              </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-11" name="establishment-conditional" type="checkbox" value="Re-wrapping establishments" data-aria-controls="conditional-establishment-conditional-11">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-11">
+                      Re-wrapping establishment
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,538 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/type-of-establishment">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/handling-animal-origin" method="post">
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="establishment-conditional-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Activities and estimated throughput for which approval is sought
+                </h1>
+              </legend>
+              <span id="establishment-conditional-hint" class="govuk-hint">
+                Select all options that are relevant to you.
+              </span>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional" name="establishment-conditional" type="checkbox" value="Slaughterhouse" data-aria-controls="conditional-establishment-conditional">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional">
+                    Slaughterhouse
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional">
+                  <div class="govuk-form-group">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Slaughter of domestic ungulates
+                        </legend>
+                        <div class="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional" name="slaughterhouse-domestic-option" type="checkbox" value="Cattle (bovine)">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-domestic-conditional-1">
+                              Cattle (bovine)
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-2" name="slaughterhouse-domestic-option" type="checkbox" value="Calves (bovine)">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-domestic-conditional-2">
+                              Calves (bovine)
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-3" name="slaughterhouse-domestic-option" type="checkbox" value="Bison">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-domestic-conditional-3">
+                              Bison
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-4" name="slaughterhouse-domestic-option" type="checkbox" value="Water buffalo">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-domestic-conditional-4">
+                              Water buffalo
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-5" name="slaughterhouse-domestic-option" type="checkbox" value="Sheep (ovine)">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-domestic-conditional-5">
+                              Sheep (ovine)
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-6" name="slaughterhouse-domestic-option" type="checkbox" value="Goats (caprine)">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-domestic-conditional-6">
+                              Goats (caprine)
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-domestic-conditional-7" name="slaughterhouse-domestic-option" type="checkbox" value="Pig (porcine)">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-domestic-conditional-7">
+                              Pigs (porcine)
+                            </label>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Slaughter and/or dressing
+                        </legend>
+                        <div class="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-1" name="slaughter-and-dressing" type="checkbox" value="farmed land mammals">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-and-dressing">
+                              Farmed land mammals
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">
+                              other than domestic ungulates
+                            </span>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-2" name="slaughter-and-dressing" type="checkbox" value="farmed deer">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-and-dressing-2">
+                              Farmed deer
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-3" name="slaughter-and-dressing" type="checkbox" value="farmed wild boar">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-and-dressing-3">
+                              Farmed wild boar
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-3" name="slaughter-and-dressing" type="checkbox" value="Domestic soliped/equidae">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-and-dressing-3">
+                              Domestic soliped/equidae
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">horses</span>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-and-dressing-3" name="slaughter-and-dressing" type="checkbox" value="ratites">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-and-dressing-3">
+                              Ratites
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">For example Ostrich, rhea and emu</span>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset govuk-fieldset__legend--s">
+                          Slaughter of farmed birds and lagomorphs
+                        </legend>
+                        <div class="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-1" name="slaughter-farmed-birds" type="checkbox" value="domestic fowl">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-farmed-birds-1">
+                              Domestic fowl
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">
+                              For example chickens, hens and broilers
+                            </span>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-2" name="slaughter-farmed-birds" type="checkbox" value="turkey">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-farmed-birds-2">
+                              Turkey
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-3" name="slaughter-farmed-birds" type="checkbox" value="duck">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-farmed-birds-3">
+                              Duck
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-4" name="slaughter-farmed-birds" type="checkbox" value="geese">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-farmed-birds-4">
+                              Geese
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-5" name="slaughter-farmed-birds" type="checkbox" value="guinea fowl">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-farmed-birds-5">
+                              Guinea fowl
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-6" name="slaughter-farmed-birds" type="checkbox" value="quail">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-farmed-birds-6">
+                              Quail
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-7" name="slaughter-farmed-birds" type="checkbox" value="ratites">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-farmed-birds-7">
+                              Ratites
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">
+                              For example ostrich, rhea and emu
+                            </span>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="slaughter-farmed-birds-8" name="slaughter-farmed-birds" type="checkbox" value="lagomorphs">
+                            <label class="govuk-label govuk-checkboxes__label" for="slaughter-farmed-birds-8">
+                              Lagomorphs
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">
+                              For example rabbits, hares and rodents
+                            </span>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+          
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-2" name="establishment-conditional" type="checkbox" value="Game handling establishment" data-aria-controls="conditional-establishment-conditional-2">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-2">
+                    Game handling establishment
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-2">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Dressing of
+                      </legend>
+                      <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="game-handling-1" name="game-handling-1" type="checkbox" value="carcasses">
+                          <label class="govuk-label govuk-checkboxes__label" for="game-handling-1">
+                            Large wild game
+                          </label>
+                          <span class="govuk-hint govuk-checkboxes__hint">
+                            For example wild deer and feral wild boar
+                          </span>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="game-handling-2" name="game-handling-2" type="checkbox" value="small wild game in-feathers">
+                          <label class="govuk-label govuk-checkboxes__label" for="game-handling-2">
+                            Small wild game in-feather
+                          </label>
+                          <span class="govuk-hint govuk-checkboxes__hint">
+                            For example pheasants, pigeons and grouse
+                          </span>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="game-handling-3" name="game-handling-3" type="checkbox" value="small wild game in-fur">
+                          <label class="govuk-label govuk-checkboxes__label" for="game-handling-3">
+                            Small wild game in-fur
+                          </label>
+                          <span class="govuk-hint govuk-checkboxes__hint">
+                            For example rabbits, hares and rodents
+                          </span>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-3" name="establishment-conditional" type="checkbox" value="Cutting plant" data-aria-controls="conditional-establishment-conditional-3">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-3">
+                    Cutting plant
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-3">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          Cutting of meat from
+                      </legend>
+                      <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="cutting-plant-1" name="cutting-plant-1" type="checkbox" value="carcasses">
+                          <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-1">
+                              Domestic ungulates
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">
+                            Read meat
+                            </span>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="cutting-plant-2" name="cutting-plant-2" type="checkbox" value="farmed birds and lagomorphs">
+                          <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-2">
+                              Farmed birds and lagomorphs
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">
+                              White meat
+                            </span>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="cutting-plant-3" name="cutting-plant-3" type="checkbox" value="large wild game">
+                          <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-3">
+                              Large wild game
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="cutting-plant-4" name="cutting-plant-4" type="checkbox" value="small wild game">
+                          <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-4">
+                              Small wild game
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="cutting-plant-5" name="cutting-plant-5" type="checkbox" value="Farmed game">
+                          <label class="govuk-label govuk-checkboxes__label" for="cutting-plant-5">
+                              Farmed game
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-4" name="establishment-conditional" type="checkbox" value="Wholesale market" data-aria-controls="conditional-establishment-conditional-4">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-4">
+                      Wholesale market
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-4">
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="wholesale-market-1" name="wholesale-market-1" type="checkbox" value="Shared common installations and sections where foodstuffs are sold">
+                                  <label class="govuk-label govuk-checkboxes__label" for="wholesale-market-1">
+                                      Shared common installations and sections where foodstuffs are sold
+                                  </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="wholesale-market-2" name="wholesale-market-2" type="checkbox" value="A separate market unit which shares common installations and sections where foodstuffs are sold">
+                                  <label class="govuk-label govuk-checkboxes__label" for="wholesale-market-2">
+                                      A separate market unit which shares common installations and sections where foodstuffs are sold
+                                  </label>
+                              </div>
+                          </div>
+                      </fieldset>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-5" name="establishment-conditional" type="checkbox" value="Minced meat" data-aria-controls="conditional-establishment-conditional-5">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-5">
+                      Minced meat
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-5">
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <div class="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="minced-meat-establishment1" name="minced-meat-establishment1" type="checkbox" value="Production of minced meat">
+                            <label class="govuk-label govuk-checkboxes__label" for="minced-meat-establishment1">
+                                Production of minced meat
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="minced-meat-establishment2" name="minced-meat-establishment2" type="checkbox" value="Production of minced meat to be eaten less than throughly cooked">
+                            <label class="govuk-label govuk-checkboxes__label" for="minced-meat-establishment2">
+                              Production of minced meat to be eaten less than throughly cooked
+                            </label>
+                            <span class="govuk-hint govuk-checkboxes__hint">
+                                For example rare burgers
+                            </span>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-6" name="establishment-conditional" type="checkbox" value="Meat preparations establishments" data-aria-controls="conditional-establishment-conditional-6">
+                  <label class="govuk-label govuk-checkboxes__label" for="establishment-conditional-6">
+                      Meat preparations establishments
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-6">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                      <div class="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="minced-meat-establishment-1" name="minced-meat-establishment-1" type="checkbox" value="Production of meat preparations">
+                              <label class="govuk-label govuk-checkboxes__label" for="minced-meat-establishment-1">
+                                  Production of meat preparations
+                              </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="minced-meat-establishment-2" name="minced-meat-establishment-2" type="checkbox" value="Production of meat preparations to be eaten less than throughly cooked">
+                              <label class="govuk-label govuk-checkboxes__label" for="minced-meat-establishment-2">
+                                  Production of meat preparations to be eaten less than throughly cooked
+                              </label>
+                              <span class="govuk-hint govuk-checkboxes__hint">
+                                  For example rare burgers
+                              </span>
+                          </div>
+                      </div>
+                  </fieldset>
+                </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-7" name="establishment-conditional" type="checkbox" value="Mechanically separated meat establishment" data-aria-controls="conditional-establishment-conditional-7">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-7">
+                      Mechanically separated meat establishment
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-7">
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes">
+                              <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="mechanically-separated-meat-1" name="mmechanically-separated-meat-1" type="checkbox" value="Production of mechanically separated meat">
+                                  <label class="govuk-label govuk-checkboxes__label" for="mechanically-separated-meat-1">
+                                      Production of mechanically separated meat
+                                  </label>
+                              </div>
+                          </div>
+                      </fieldset>
+                    </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-8" name="establishment-conditional" type="checkbox" value="Processing plant" data-aria-controls="conditional-establishment-conditional-8">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-8">
+                      Processing plant
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-8">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+                        Processing/producing of
+                    </legend>
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="processing-plant-1" name="processing-plant-1" type="checkbox" value="Meat products">
+                        <label class="govuk-label govuk-checkboxes__label" for="processing-plant-1">
+                            Meat products
+                        </label>
+                        <span class="govuk-hint govuk-checkboxes__hint">
+                            to be cooked before eating
+                        </span>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="processing-plant-2" name="processing-plant-2" type="checkbox" value="Ready to eat meat products">
+                        <label class="govuk-label govuk-checkboxes__label" for="processing-plant-2">
+                            Ready to eat meat products
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="processing-plant-3" name="processing-plant-3" type="checkbox" value="Rendered animal fats and greaves">
+                        <label class="govuk-label govuk-checkboxes__label" for="processing-plant-3">
+                            Rendered animal fats and greaves
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="processing-plant-4" name="processing-plant-4" type="checkbox" value="Treated stomach, bladders and intestines">
+                        <label class="govuk-label govuk-checkboxes__label" for="processing-plant-4">
+                            Treated stomach, bladders and intestines
+                        </label>
+                      </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="processing-plant-5" name="processing-plant-5" type="checkbox" value="Production of mechanically separated meat">
+                          <label class="govuk-label govuk-checkboxes__label" for="processing-plant-5">
+                              Gelatine
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="processing-plant-6" name="processing-plant-6" type="checkbox" value="Collagen">
+                          <label class="govuk-label govuk-checkboxes__label" for="processing-plant-6">
+                              Collagen
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-9" name="establishment-conditional" type="checkbox" value="Cold store" data-aria-controls="conditional-establishment-conditional-9">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-9">
+                      Cold store
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-9">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <div class="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="cold-store-1" name="cold-store-1" type="checkbox" value="Storage of product of animal origin">
+                                <label class="govuk-label govuk-checkboxes__label" for="cold-store-1">
+                                    Storage of product of animal origin
+                                </label>
+                                <span class="govuk-hint govuk-checkboxes__hint">
+                                    fresh or processed
+                                </span>
+                            </div>
+                        </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-10" name="repackaging-establishments" type="checkbox" value="Re-packaging establishments" data-aria-controls="conditional-establishment-conditional-10">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-10">
+                      Re-packaging establishments
+                  </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-10">
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <div class="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="repackaging-establishments-1" name="establishment-conditional" type="checkbox" value="Repackaging of products of animal origin">
+                        <label class="govuk-label govuk-checkboxes__label" for="repackaging-establishments-1">
+                            Repackaging of products of animal origin
+                        </label>
+                        <span class="govuk-hint govuk-checkboxes__hint">
+                            fresh or processed
+                        </span>
+                      </div>
+                    </div>
+                  </fieldset>
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="establishment-conditional-11" name="establishment-conditional" type="checkbox" value="Re-wrapping establishments" data-aria-controls="conditional-establishment-conditional-11">
+                  <label class="govuk-label govuk-checkboxes__label" for="conditional-establishment-conditional-11">
+                      Re-wrapping establishments
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-establishment-conditional-11">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <div class="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="rewrapping-establishments-1" name="rewrapping-establishments-1" type="checkbox" value="Rewrapping of products opf animal origin">
+                          <label class="govuk-label govuk-checkboxes__label" for="rewrapping-establishments-1">
+                              Re-wrapping of products of animal origin
+                          </label>
+                          <span class="govuk-hint govuk-checkboxes__hint">
+                              fresh or processed
+                          </span>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
